@@ -5793,7 +5793,6 @@ function startFunction() {
 }
 
 function handleMouseClick(e) {
-  console.log(e);
   if (e.target.matches("[data-key]")) {
     var charStr = e.target.textContent;
     if (/[a-zA-Z]/i.test(charStr)) {
