@@ -3,6 +3,7 @@ body {
   height: 90vh;
   width: 100vw;
   display: flex;
+  font-family: "Courier New", Courier, monospace;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
