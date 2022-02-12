@@ -3,7 +3,8 @@ body {
   height: 90vh;
   width: 100vw;
   display: flex;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
