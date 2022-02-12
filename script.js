@@ -5948,11 +5948,8 @@ function correctAnswer() {
           .classList.contains("semi-correct")
       )
         document
-          .getElementsByClassName(`${i + 1} Row${emptyRow}`)[0]
+          .getElementById(`${wordArray[i].toUpperCase()}`)
           .classList.add("incorrect");
-      document
-        .getElementById(`${wordArray[i].toUpperCase()}`)
-        .classList.add("incorrect");
     }
   }
   if (flag == 0) {
