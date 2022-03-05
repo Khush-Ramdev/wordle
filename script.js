@@ -5793,6 +5793,8 @@ function startFunction() {
 }
 
 function handleMouseClick(e) {
+  e.preventDefault();
+  console.log(e.target);
   if (e.target.matches("[data-key]")) {
     var charStr = e.target.textContent;
     if (/[a-zA-Z]/i.test(charStr)) {
@@ -5911,6 +5913,7 @@ function correctAnswer() {
   for (let i = 0; i < 5; i++) {
     countLetter[correctWordArray[i].charCodeAt(0) - 97]++;
   }
+  console.log(countLetter);
   let flag = 0;
   for (let i = 0; i < 5; i++) {
     if (correctWordArray[i] == wordArray[i]) {
@@ -5928,7 +5931,10 @@ function correctAnswer() {
   for (let i = 0; i < 5; i++) {
     if (
       correctWordArray.indexOf(wordArray[i]) != -1 &&
-      countLetter[wordArray[i].charCodeAt(0) - 97] > 0
+      countLetter[wordArray[i].charCodeAt(0) - 97] > 0 &&
+      !document
+        .getElementsByClassName(`${i + 1} Row${emptyRow}`)[0]
+        .classList.contains("correct")
     ) {
       flag = 1;
       document

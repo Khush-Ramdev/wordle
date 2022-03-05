@@ -1,16 +1,15 @@
 body {
   margin: 0;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.726);
+  background-color: #ed6363;
   overflow: hidden;
-  color: white;
 }
 
 .heading {
@@ -18,7 +17,8 @@ body {
   width: 90vw;
   text-align: center;
   margin: 1rem;
-  border: 1px solid white;
+  border: 2px solid black;
+  border-radius: 10px;
   text-transform: uppercase;
 }
 
@@ -34,29 +34,32 @@ body {
   /* grid-auto-flow: column; */
 }
 
+button {
+  touch-action: manipulation;
+}
+
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
-  text-align: center;
-  color: white;
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  background-color: hsl(
-    var(--hue, 200),
-    var(--saturation, 1%),
-    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
-  );
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border: #222831 2px solid;
 }
 
 .semi-correct {
-  background-color: rgba(165, 165, 48, 0.705) !important;
+  background-color: #ffd369 !important;
+  color: black !important;
 }
 
 .correct {
-  background-color: green !important;
+  background-color: #4aa96c !important;
+  color: black !important;
 }
 
 .incorrect {
-  background-color: rgba(0, 0, 0, 0.753) !important;
+  background-color: #423f3e !important;
 }
 
 .hide {
@@ -77,7 +80,6 @@ body {
 .keyboard {
   margin: 0.3rem;
   margin-bottom: 2rem;
-  margin-top: auto;
   display: grid;
   grid-template-columns: repeat(20, minmax(0.35rem, 1.25rem));
   grid-auto-rows: 3em;
@@ -94,11 +96,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(
-    var(--hue, 200),
-    var(--saturation, 1%),
-    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
-  );
+  background-color: hsla(0, 0%, 0%, 0.8);
   color: white;
   fill: white;
   text-transform: uppercase;
