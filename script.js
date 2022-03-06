@@ -5787,7 +5787,7 @@ let emptyRow = 1;
 
 function reset() {
   document.querySelector(".grid").innerHTML = "";
-  // document.querySelector(".restart").classList.toggle("hide", true);
+  document.querySelector(".restart").classList.toggle("hide", true);
   emptyRow = 1;
   emptyCell = 1;
   document.querySelectorAll(".key").forEach((key) => {
