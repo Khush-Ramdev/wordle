@@ -1,5 +1,5 @@
 html {
-  background-color: #ed6363;
+  background-color: #8785a2;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #ed6363;
+  background-color: #8785a2;
   overflow: hidden;
 }
 
@@ -67,7 +67,7 @@ button {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .message {
@@ -133,4 +133,46 @@ button {
   background-color: #4aa96c;
   padding: 0 0.5rem;
   font-size: 0.9rem;
+}
+
+.restart {
+  top: 25%;
+  left: 25%;
+  position: fixed;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.restart-btn {
+  background-color: rgba(255, 0, 0, 0.555);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: rgba(255, 0, 0);
+}
+
+.share-btn {
+  cursor: pointer;
+  margin: 1rem;
+  text-align: center;
+}
+
+.correct-word {
+  text-align: center;
+  margin: 1rem;
 }

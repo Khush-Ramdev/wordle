@@ -5785,9 +5785,27 @@ function addCLass() {
 let emptyCell = 1;
 let emptyRow = 1;
 
+function reset() {
+  document.querySelector(".grid").innerHTML = "";
+  document.querySelector(".restart").classList.toggle("hide", true);
+  emptyRow = 1;
+  emptyCell = 1;
+  document.querySelectorAll(".key").forEach((key) => {
+    key.classList.remove("correct");
+    key.classList.remove("semi-correct");
+    key.classList.remove("incorrect");
+  });
+  document.querySelector(".correct-word").innerHTML = `Correct Word : `;
+  num = Math.floor(Math.random() * words.length);
+  correctWord = words[num];
+  correctWordArray = correctWord.split("");
+}
+
 function startFunction() {
+  reset();
   makeRows(6, 5);
   addCLass();
+
   document.addEventListener("keydown", handleKeyDown);
   document.addEventListener("click", handleMouseClick);
 }
@@ -5843,6 +5861,7 @@ function handleMouseClick(e) {
 }
 
 function handleKeyDown(e) {
+  console.log("keyboard listener working");
   var charCode = e.which || e.keyCode;
   var charStr = String.fromCharCode(charCode);
   if (/[a-zA-Z]/i.test(charStr)) {
@@ -5890,12 +5909,17 @@ function checkWord() {
       emptyRow++;
       if (emptyRow > 6) {
         sendMessage(correctWord);
+        document.querySelector(
+          ".correct-word"
+        ).innerHTML = `Correct Word : ${correctWord.toUpperCase()}`;
+        restart();
       }
       emptyCell = 1;
       guesses.push(word);
     } else {
       gameFinished = true;
       sendMessage("Congratulations");
+      restart();
       document.removeEventListener("keydown", handleKeyDown);
     }
   } else {
@@ -5962,6 +5986,15 @@ function correctAnswer() {
     return true;
   }
   return false;
+}
+
+function restart() {
+  const restartDiv = document.querySelector(".restart");
+  restartDiv.classList.toggle("hide");
+  const restart = document.querySelector(".restart-btn");
+  restart.addEventListener("click", () => {
+    startFunction();
+  });
 }
 
 function sendMessage(vars) {
