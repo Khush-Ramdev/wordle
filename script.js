@@ -5909,9 +5909,10 @@ function checkWord() {
       emptyRow++;
       if (emptyRow > 6) {
         sendMessage(correctWord);
+        document.querySelector(".correct-word").classList.toggle("hide");
         document.querySelector(
           ".correct-word"
-        ).innerHTML = `Correct Word : ${correctWord.toUpperCase()}`;
+        ).innerText = `Correct word : ${correctWord.toUpperCase()}`;
         restart();
       }
       emptyCell = 1;
@@ -6003,7 +6004,17 @@ function sendMessage(vars) {
   message.classList.toggle("hide", false);
   setTimeout(() => {
     message.classList.toggle("hide", true);
-  }, 1500);
+  }, 2000);
+}
+
+function shareLink() {
+  let textToCopy =
+    "Play this awesome worlde clone on : https://wordlewordgame.netlify.app/";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(textToCopy).then(() => {});
+  } else {
+    console.log("Browser Not compatible");
+  }
 }
 
 startFunction();
